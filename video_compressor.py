@@ -1,5 +1,5 @@
 """
-VideoPress - Compresseur video moderne
+Sanvicomp - Compresseur video moderne
 Dependances : pip install tkinterdnd2
 Police     : placer Nunito-Regular.ttf et Nunito-Bold.ttf dans un dossier fonts/
 Packaging Windows :
@@ -8,7 +8,7 @@ Packaging Windows :
     --add-data "fonts;fonts" \
     --hidden-import tkinterdnd2 \
     --collect-data tkinterdnd2 \
-    --name "VideoPress" video_compressor.py
+    --name "Sanvicomp" video_compressor.py
 """
 
 import os, re, sys, threading, subprocess
@@ -163,7 +163,7 @@ class VideoCompressor(BaseClass):
         super().__init__()
         NUNITO_LOADED = load_fonts()
 
-        self.title("VideoPress")
+        self.title("Sanvicomp")
         self.resizable(False, False)
         self.configure(bg=C["bg"])
 
@@ -198,7 +198,7 @@ class VideoCompressor(BaseClass):
         # ── Header ──
         header = tk.Frame(self, bg=C["surface"], padx=24, pady=20)
         header.pack(fill="x")
-        tk.Label(header, text="VideoPress", font=F(26, "bold"),
+        tk.Label(header, text="Sanvicomp", font=F(26, "bold"),
                  bg=C["surface"], fg=C["text"]).pack(anchor="w")
         hint = "Glissez vos videos ici ou utilisez le bouton Ajouter" if DND_AVAILABLE \
                else "Utilisez le bouton Ajouter pour selectionner vos videos"
