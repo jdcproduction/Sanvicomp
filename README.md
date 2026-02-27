@@ -1,4 +1,4 @@
-# VideoPress
+# Sanvicomp
 
 Un outil de compression vidéo simple et efficace, par jdcproduction.
 
@@ -53,10 +53,10 @@ pyinstaller --onefile --windowed \
   --add-data "fonts;fonts" \
   --hidden-import tkinterdnd2 \
   --collect-data tkinterdnd2 \
-  --name "VideoPress" video_compressor.py
+  --name "Sanvicomp" video_compressor.py
 ```
 
-Le `.exe` final se trouve dans `dist/VideoPress.exe`.
+Le `.exe` final se trouve dans `dist/Sanvicomp.exe`.
 
 ---
 
