@@ -13,6 +13,12 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Download FFmpeg
+        run: |
+          curl -L "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip" -o ffmpeg.zip
+          Expand-Archive ffmpeg.zip -DestinationPath ffmpeg_tmp
+          Move-Item ffmpeg_tmp\*\bin\ffmpeg.exe ffmpeg.exe
+
       - name: Install dependencies
         run: pip install pyinstaller tkinterdnd2
 
@@ -23,11 +29,10 @@ jobs:
             --add-data "fonts;fonts" `
             --hidden-import tkinterdnd2 `
             --collect-data tkinterdnd2 `
-            --name "Sanvicomp" video_compressor.py
+            --name "VideoPress" video_compressor.py
 
       - name: Upload EXE
         uses: actions/upload-artifact@v4
         with:
           name: VideoPress
-          path: dist/Sanvicomp.exe
-
+          path: dist/VideoPress.exe
